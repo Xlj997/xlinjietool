@@ -4,6 +4,9 @@
 # @Author  : lj
 # @File    : data_from.py
 import datetime
+from typing import List
+
+
 def data_format_():
     us_month = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October','November', 'December']
 
@@ -38,6 +41,23 @@ def data_format_():
             a.append(register[i])
     return month
 
+def time_format(str_list: List[str]):
+    if str_list:
+        if ' on ' in str_list[0]:
+            return str_list[0].split(' on ')[-1]
+        elif ' le ' in str_list[0]:
+            return str_list[0].split(' le ')[-1]
+        elif ' il ' in str_list[0]:
+            return str_list[0].split(' il ')[-1]
+        elif ' el ' in str_list[0]:
+            return str_list[0].split(' el ')[-1]
+        elif ' vom ' in str_list[0]:
+            return str_list[0].split(' vom ')[-1]
+        else:
+            return data_format(str_list[0])
+
+
+
 def data_format(time):
     time = time.replace(' de ', ' ')
     time = time.replace('.', '')
@@ -71,6 +91,7 @@ def data_format(time):
     return data_time
 
 async def data_format_x(time):
+
     time = time.replace(' de ', ' ')
     time = time.replace('.', '')
     time = time.replace(',', '')

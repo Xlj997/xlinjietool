@@ -4,8 +4,8 @@ with open("README.md", "r", encoding='utf-8') as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="ljtool",
-    version="0.0.3",
+    name="xlj",
+    version="0.0.6",
     author="Linjie Xing",
     author_email="jin.951107@gmail.com",
     description="工具库",
